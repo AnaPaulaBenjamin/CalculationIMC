@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --tt-heading: hsl(194, 68%, 15%);
+
+  --tt-label: hsl(170, 100%, 14%);
+  --bg-input: hsl(212, 23%, 89%);
+  --tt-input: hsl(210, 11%, 15%);
+  --ot-input: hsl(194, 97%, 31%);
+  --bd-input: hsla(210, 9%, 31%, 0.302);
+  --tt-placeholder: hsla(210, 9%, 31%, 0.5);
+
+  --bg-modal-congrats: hsl(144, 97%, 31%);
+  --bg-modal-worry: hsl(69, 97%, 31%);
+  --bg-modal-danger: hsl(14, 97%, 31%);
+
+  --tt--button: hsl(0, 0%, 100%);
+  --bg-button: hsl(194, 97%, 31%);
+  --bg-button-hover: hsl(194, 97%, 23%);
+
+  --bg-error: hsl(0, 86%, 59%);
+  --tt-error: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: hsl(231, 80%, 8%);
+}
+
+body,
+input,
+button {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  place-content: center;
+
+  padding: 1.9rem;
+}
+
+.card {
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 0.2rem 0.4rem hsla(0, 0%, 0%, 0.1);
+  border-radius: 0.6rem;
+
+  padding: 4.8rem 2.9rem 6.4rem;
+  margin-inline: auto;
+}
+
+.title {
+  color: var(--tt-heading);
+
+  font-size: 3.2rem;
+  line-height: 4rem;
+}
+
+form {
+  min-width: clamp(22.4rem, 16rem + 20vw, 30rem);
+}
+
+form h1 {
+  text-align: center;
+  margin-bottom: 3.2rem;
+}
+
+form label {
+  color: var(--tt-label);
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+form input {
+  color: var(--tt-input);
+  background-color: var(--bg-input);
+  width: 100%;
+  padding: 1.6rem;
+  border: 1px solid var(--bd-input);
+  border-radius: 0.4rem;
+}
+
+form input:focus {
+  outline: 2px solid var(--ot-input);
+}
+
+form input::placeholder {
+  color: var(--tt-placeholder);
+}
+
+.input-wrapper + .input-wrapper {
+  margin-top: 1.6rem;
+}
+
+form button {
+  color: var(--tt--button);
+  font-weight: 700;
+
+  background-color: var(--bg-button);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+
+  width: 100%;
+  padding: 1.6rem;
+  margin-top: 3.2rem;
+
+  border: none;
+  border-radius: 0.4rem;
+
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: var(--bg-button-hover);
+}
+
+.modal-wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-wrapper {
+  position: absolute;
+  inset: 0;
+
+  background-color: hsla(0, 0%, 0%, 0.7);
+
+  display: grid;
+  place-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal {
+  position: relative;
+}
+
+.modal.card {
+  text-align: center;
+  gap: 4.5rem;
+  min-width: clamp(31rem, 22rem + 29vw, 49.3rem);
+
+  padding: 4.8rem 2.8rem 3.8rem 1.5rem;
+}
+
+.modal button {
+  background: none;
+  border: none;
+
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  cursor: pointer;
+
+  transition: transform 0.3s;
+}
+
+.modal button:hover {
+  transform: scale(1.1);
+}
+
+.alert-error.open {
+  visibility: visible;
+  opacity: 1;
+
+  transform: translateY(0);
+  transition: transform 0.5s;
+}
+
+.alert-error {
+  color: var(--tt-error);
+  font-weight: 700;
+
+  background-color: var(--bg-error);
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  left: 0;
+
+  text-align: center;
+  padding: 0.8rem 0;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transform: translateY(-30px);
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 4.8rem 6.4rem 6.4rem;
+  }
+}
