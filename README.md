@@ -1,5 +1,7 @@
 # Calculadora de IMC
 
+![](./assets/screenshot.png)
+
 # Sobre o projeto
 
 Projeto criado como exercício de aprendizado da <strong>DOM (Document Object Module)</strong>
@@ -11,3 +13,7 @@ Projeto criado como exercício de aprendizado da <strong>DOM (Document Object Mo
     <li>Praticar <strong>HTML</strong>, <strong>CSS</strong> e <strong>JavaScript</strong>;</li>
     <li>Visualizar e entender a <strong>integração destas 3 linguagens de programação</strong>.</li>
   </ul>
+
+### Link
+
+- Solução URL: [Cálculo de IMC](https://anapaulabenjamin.github.io/CalculationIMC/)
